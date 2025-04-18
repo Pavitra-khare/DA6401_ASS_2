@@ -6,7 +6,7 @@ All experiments were run on **Kaggle Notebooks** using a GPU-enabled environment
 
 [GitHub Repository](https://github.com/Pavitra-khare/DA6401_ASS_2A)
 
-[Weights & Biases Report](https://api.wandb.ai/links/3628-pavitrakhare-indian-institute-of-technology-madras/6l8em45m)
+[Weights & Biases Report](https://api.wandb.ai/links/3628-pavitrakhare-indian-institute-of-technology-madras/m5cmjze4)
 
 ---
 
@@ -55,33 +55,25 @@ Test Accuracy 81.20%
 ---
 
 
-## 📁 Project File Overview
+## Function Overview
 
-| File            | Purpose                                                                 |
-|-----------------|-------------------------------------------------------------------------|
-| `run.py`        | Main entry point; initiates sweep, loads model/data, trains and logs.  |
-| `config.py`     | CLI argument parsing, wandb login, device setup.                        |
-| `train_func.py` | Training/validation logic with early stopping and best model selection. |
-| `data_load.py`  | Loads and augments train/validation/test datasets using torchvision.    |
-| `model.py`      | Custom CNN model definition with 5 conv layers and configurable params. |
-| `sweep_config.py` | Wandb sweep configuration using best parameters from CLI.            |
-| `plot.py`       | Visualizes predictions for randomly sampled test images.                |
-
----
-
-## 🗺️ File Dependency Map
-
-<pre>
-run.py
-├── config.py         # Parses args, logs into wandb
-├── model.py          # Defines CNN architecture
-├── data_load.py      # Loads datasets with transforms
-├── train_func.py     # Training, validation, early stopping logic
-├── sweep_config.py   # Sweep configuration (uses bestParam)
-└── plot.py           # Logs prediction visualizations to wandb
-</pre>
+| **Function**               | **Purpose**                                                                 | **Key Parameters**                          | **Returns**                              |
+|----------------------------|-----------------------------------------------------------------------------|---------------------------------------------|------------------------------------------|
+| `get_config()`             | Parses CLI args, initializes wandb sweep, sets device                      | All command-line arguments                 | `(sweep_id, args, device)`               |
+| `load_train_val_data()`    | Loads & splits training/validation data with optional augmentation         | `train_data_directory`, `use_data_augmentation` | `(train_loader, val_loader)`          |
+| `load_test_data()`         | Loads test data with optional augmentation                                 | `test_data_directory`, `apply_data_augmentation` | `test_loader`                        |
+| `ConvNetworkModel`         | Custom CNN model constructor                                               | Hyperparameters (filters, kernel size etc.) | Initialized CNN model                 |
+| `trainDataTraining()`      | Executes one training epoch                                                | `model`, `train_loader`, `device`           | Updated model, loss, accuracy           |
+| `validDataTesting()`       | Evaluates model on validation/test data                                    | `model`, `test_data`, `device`              | Accuracy percentage                     |
+| `trainCnnModelVal()`       | Full training loop with early stopping                                     | `model`, train/val data, `epochs`, `device`  | Best-trained model                      |
+| `plotImage()`              | Visualizes predictions on test images                                      | `model`, `args`, `device`                    | Logs images to wandb                    |
+| `main()`                   | Orchestrates entire workflow                                               | -                                           | -                                       |
 
 ---
+
+
+
+
 
 
 ## 🔧 Command Line Arguments
