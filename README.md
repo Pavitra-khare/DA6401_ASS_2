@@ -108,5 +108,5 @@ pip install torch torchvision scikit-learn wandb
 
 ###2. run the run.py
 ```bash
-python run.py --wandb_project <project_name> --wandb_entity <entity_name> --dpTrain <train_data_path> --dpTest <test_data_path>....
+python runA.py --wandb_project <project_name> --wandb_entity <entity_name> --dpTrain <train_data_path> --dpTest <test_data_path>....
 ```
