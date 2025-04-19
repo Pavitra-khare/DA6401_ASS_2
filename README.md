@@ -6,7 +6,7 @@ All experiments were run on **Kaggle Notebooks** using a GPU-enabled environment
 
 [GitHub Repository](https://github.com/Pavitra-khare/DA6401_ASS_2A)
 
-[Weights & Biases Report](https://api.wandb.ai/links/3628-pavitrakhare-indian-institute-of-technology-madras/m5cmjze4)
+[Weights & Biases Report](https://api.wandb.ai/links/3628-pavitrakhare-indian-institute-of-technology-madras/lods8pjm)
 
 [Sweeps for different Hyperparameters on kaggle](https://www.kaggle.com/code/pavitrakhare/da6401-ass-2a-sweeps)
 
