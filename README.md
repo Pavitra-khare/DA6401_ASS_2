@@ -8,6 +8,8 @@ All experiments were run on **Kaggle Notebooks** using a GPU-enabled environment
 
 [Weights & Biases Report](https://api.wandb.ai/links/3628-pavitrakhare-indian-institute-of-technology-madras/m5cmjze4)
 
+[Sweeps for different Hyperparameters on kaggle](https://www.kaggle.com/code/pavitrakhare/da6401-ass-2a-sweeps)
+
 ---
 
 ## Objective
@@ -108,5 +110,5 @@ pip install torch torchvision scikit-learn wandb
 
 ###2. run the run.py
 ```bash
-python runA.py --wandb_project <project_name> --wandb_entity <entity_name> --dpTrain <train_data_path> --dpTest <test_data_path>....
+python trainA.py --wandb_project <project_name> --wandb_entity <entity_name> --dpTrain <train_data_path> --dpTest <test_data_path>....
 ```
